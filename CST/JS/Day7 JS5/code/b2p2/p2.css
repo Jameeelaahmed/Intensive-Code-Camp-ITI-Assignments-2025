@@ -1,0 +1,23 @@
+.container {
+    margin: auto;
+    width: fit-content;
+}
+
+.inputContainer,
+.imgContainer {
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.imgContainer {
+    display: inline-block;
+}
+
+.imgContainer input {
+    display: block;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}

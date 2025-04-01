@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(255, 255, 190);
+}
+
+img {
+    width: 150px;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    border-radius: 10px;
+    margin: 20px;
+    color: rgb(0, 141, 141);
+    box-shadow: inset 10px 10px 10px 0 rgb(254, 182, 0),
+        inset 18px 18px 8px 0 rgb(254, 110, 0),
+        inset -10px -10px 10px 0 rgb(254, 182, 0),
+        inset -18px -18px 8px 0 rgb(254, 110, 0);
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+h2 {
+    color: rgb(0, 141, 141);
+    padding: 10px;
+}
+
+textarea {
+    width: 70%;
+    background-color: rgb(255, 255, 190);
+    box-shadow: inset 10px 10px 10px 0 rgb(254, 182, 0),
+        inset 18px 18px 8px 0 rgb(254, 110, 0),
+        inset -10px -10px 10px 0 rgb(254, 182, 0),
+        inset -18px -18px 8px 0 rgb(254, 110, 0);
+    height: 100px;
+    padding: 25px;
+    color: rgb(0, 141, 141);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+input[type='submit'] {
+    margin-top: 15px;
+    background-color: rgb(0, 141, 141);
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+input[type='submit']:hover {
+    background-color: rgb(254, 110, 0);
+}
+
+.cardHolder {
+    width: fit-content;
+    display: inline-block;
+    padding: 10px;
+    transition: 0.4s;
+}

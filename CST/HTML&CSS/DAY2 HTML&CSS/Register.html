@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widtr=device-widtr, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="">
+        <table border="1" cellspacing="2px" cellpadding="10px">
+            <caption>Registration Form</caption>
+            <tr>
+                <td>
+                    <label for="firstname"><u>F</u>irstName</label>
+                </td>
+                <td>
+                    <input type="text" name="firstname" id="firstname" placeholder="Enter your FirstName"
+                        accesskey="F" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="lastname"><u>L</u>astName</label>
+                </td>
+                <td>
+                    <input type="text" name="lastname" id="lastname" placeholder="Enter your LastName" accesskey="L" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email"><u>E</u>mail</label>
+                </td>
+                <td>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" accesskey="E" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password"><u>P</u>assword</label>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password" placeholder="Enter your password"
+                        accesskey="P" />
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <label for="gender"><u>G</u>ender</label>
+                </td>
+                <td>
+                    <input type="radio" name="Male" accesskey="G" />
+                    <label for="male">Male</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="Female" />
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="country"><u>C</u>ountry</label>
+                </td>
+                <td>
+                    <select name="country" accesskey="C">
+                        <optgroup label="Africa">
+                            <option value="Egypt">
+                                Egypt
+                            </option>
+                            <option value="Morroco">
+                                Morroco
+                            </option>
+                            <option value="Sudan">
+                                Algeria
+                            </option>
+                        </optgroup>
+                        <optgroup label="Europe" ْ disabled>
+                            <option value="Italy">
+                                Italy
+                            </option>
+                            <option value="Swedan">
+                                Swedan
+                            </option>
+                            <option value="Spain">
+                                Spain
+                            </option>
+                        </optgroup>
+                        <optgroup label="Asia">
+                            <option value="Palastine">
+                                Italy
+                            </option>
+                            <option value="South Korea">
+                                South Korea
+                            </option>
+                            <option value="India">
+                                India
+                            </option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="bd"><u>B</u>irthDay</label>
+                </td>
+                <td>
+                    <input type="date" name="bd" id="bd" accesskeY="B" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="interst">
+                    <label for="interst">Interst</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="check">
+                        <span>
+                            <input type="checkbox" id="sports" name="sports">
+                            <label for="sports">Sports</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" id="music" name="music">
+                            <label for="music">Music</label>
+                        </span>
+                        <span>
+                            <input type="checkbox" id="Fashion" name="Fashion">
+                            <label for="Fashion">Fashion</label>
+                        </span>
+                    </div>
+                    <div class="check">
+                        <span>
+                            <input type="checkbox" id="Reading" name="Reading">
+                            <label for="Reading">Reading</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="Shopping" name="Shopping">
+                            <label for="Shopping">Shopping</label>
+                        </span>
+
+                        <span>
+                            <input type="checkbox" id="Movies" name="Movies">
+                            <label for="">Movies</label>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="bio" id="" placeholder="Enter your Bio"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class=" button">
+                    <button type="submit">Submit</button>
+                </td>
+                <td class="button">
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

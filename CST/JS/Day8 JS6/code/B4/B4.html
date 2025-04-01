@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B4</title>
+    <link rel="stylesheet" href="./B4.css">
+    <style>
+        #container {
+            position: relative;
+        }
+
+        .first,
+        .second,
+        .third {
+            position: absolute;
+        }
+
+        .first {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .second {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .third {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="container">
+        <div id="pics">
+            <img src="../../Task Resources/movingPic/icon1.gif" alt="" class="first">
+            <img src="../../Task Resources/movingPic/TOP.JPG" alt="" class="second">
+            <img src="../../Task Resources/movingPic/icon2.gif" alt="" class="third">
+        </div>
+    </div>
+    <div id="positionDisplay">
+        <h3>Current Positions</h3>
+        <p>First Image Left:<span id="firstPos"> 0px</span></p>
+        <p>Second Image Top: <span id="secondPos">0px</span></p>
+        <p>Third Image Left: <span id="thirdPos">0px</span></p>
+    </div>
+
+    <button id="resetBtn">Reset</button>
+    <button id="stopBtn">Stop</button>
+    <script src="./B4.js"></script>
+</body>
+
+</html>

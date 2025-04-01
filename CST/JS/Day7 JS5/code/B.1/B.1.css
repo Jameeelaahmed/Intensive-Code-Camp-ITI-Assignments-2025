@@ -1,0 +1,63 @@
+.calculator {
+    background-color: #000;
+    width: fit-content;
+    padding: 15px;
+    position: relative;
+    margin: 10% auto 0;
+    border-radius: 15px;
+}
+
+h1 {
+    color: rgb(211, 149, 198);
+    font-weight: bold;
+    text-align: center;
+}
+
+.inputConHead input[type="text"] {
+    width: 67%;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+    box-shadow: inset 0px 0px 10px rgb(98, 52, 91);
+    caret-color: rgb(98, 52, 91);
+    outline: none;
+}
+
+.inputCon input,
+.inputConHead input[type='button'] {
+    padding: 10px;
+    margin: 4px;
+    transition: 0.4s;
+    font-size: 18px;
+}
+
+.inputConHead input[type='button'] {
+    background-color: rgb(211, 149, 198);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 10px rgb(98, 52, 91);
+    border: none;
+    border-radius: 50%;
+    width: 21%;
+    height: 60px;
+}
+
+
+.inputCon:not(:first-child) input {
+    width: 21%;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(211, 149, 198);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 10px rgb(98, 52, 91);
+}
+
+input[type='button']:hover {
+    background-color: white;
+    color: lightpink;
+}

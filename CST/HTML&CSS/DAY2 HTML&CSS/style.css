@@ -1,0 +1,125 @@
+caption {
+    padding: 15px;
+}
+
+table {
+    width: 50%;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+    border: 5px solid lightblue;
+    outline: 5px solid lightpink;
+    margin: 0 auto;
+}
+
+table td {
+    border-radius: 10px;
+    outline: none;
+    border: 5px solid lightblue;
+
+}
+
+table td input[type="text"],
+table td input[type="email"],
+table td input[type="password"],
+table td input[type="date"],
+table td select,
+textarea {
+    padding: 10px;
+    width: 92%;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid;
+    border: 5px solid lightblue;
+    outline: 5px solid lightpink;
+}
+
+table td select {
+    width: 100%;
+}
+
+
+option {
+    background-color: lightblue;
+}
+
+.interst {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.check span {
+    margin: 0 10%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.button {
+    text-align: center;
+}
+
+.button button {
+    width: 80%;
+    padding: 10px 30px;
+    border-radius: 12px;
+    border: 5px solid lightpink;
+    cursor: pointer;
+}
+
+/* ! ----------------------------------------------------- */
+/* ******************************************************** */
+/* ? ------------------------------------------------------ */
+
+fieldset {
+    margin: 50px auto;
+    width: 30%;
+    border: 5px solid lightslategray;
+    outline: 5px solid lightseagreen;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 1px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 25px;
+    color: lightseagreen;
+}
+
+.user-input {
+    margin-bottom: 15px;
+}
+
+.user-input label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: lightslategray;
+}
+
+.user-input input[type="text"],
+.user-input input[type="password"] {
+    width: 94%;
+    padding: 10px;
+    border: 4px solid lightslategray;
+    outline: 4px solid lightseagreen;
+    border-radius: 10px;
+}
+
+
+fieldset button {
+    width: 70%;
+    margin-left: 15%;
+    padding: 10px;
+    background-color: lightseagreen;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: po;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Data</title>
+    <style>
+        .data-container {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .data-item {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="data-container">
+        <h2>Stored Data:</h2>
+        <div class="data-item" id="nameValue"></div>
+        <div class="data-item" id="ageValue"></div>
+        <img src class="data-item" id="gender"></img>
+        <div class="data-item" id="colorValue"></div>
+    </div>
+
+    <script>
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                const [cookieName, cookieValue] = cookie.split('=');
+                if (cookieName.trim() === name) {
+                    return decodeURIComponent(cookieValue);
+                }
+            }
+            return '';
+        }
+
+        window.onload = function () {
+            document.getElementById('nameValue').textContent = "Name: " + getCookie('name');
+            document.getElementById('ageValue').textContent = "Age: " + getCookie('age');
+            document.getElementById('gender').src = getCookie('gender') === 'male' ? "../../Task Resources/cookies/1.jpg" : "../../Task Resources/cookies/2.jpg";
+            const color = getCookie('color');
+            document.getElementById('colorValue').textContent = "favourite color is: " + color;
+            console.log(color)
+            document.getElementById('colorValue').style.color = color;
+        };
+    </script>
+</body>
+
+</html>

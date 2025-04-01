@@ -1,0 +1,52 @@
+form {
+    margin: 5% auto;
+    width: fit-content;
+    background-color: rgb(243, 236, 236);
+    padding: 25px;
+    border-radius: 12px;
+    color: rgb(72, 85, 112);
+    box-shadow: inset 2px -2px 0 1px rgb(72, 85, 112);
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: rgb(167, 176, 195);
+    caret-color: rgb(72, 85, 112);
+}
+
+input:not([type="radio"]) {
+    width: calc(100% - 15px);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    display: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid rgb(72, 85, 112);
+    color: rgb(72, 85, 112);
+    ;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    transition: 0.4s;
+    background-color: rgb(167, 176, 195);
+}
+
+button:hover {
+    background-color: rgb(72, 85, 112);
+    color: rgb(167, 176, 195);
+}
