@@ -53,7 +53,8 @@ Contains completed assignments and projects from the ITI (Information Technology
 /iti-code-camp/
 │
 ├── CST (Client Side Technologies)/
-│   ├── HTML/CSS/
+│   ├── HTML&CSS/
 │   └── javascript-fundamentals/
 ├── Advanced JS
-│   └── Advanced JS
+├── jQuery
+
