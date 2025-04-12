@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1</title>
+    <style>
+        #myDiv {
+            width: 100px;
+            color: white;
+            background-color: #eba1bd;
+            border: 2px solid #d53a73;
+            font-size: 16px;
+            padding: 10px;
+            margin-left: 0;
+        }
+
+        button {
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myDiv">Hello</div>
+    <button id="runBtn">Run</button>
+    <button id="returnBtn">Return</button>
+
+    <script src="../../jquery-3.7.1.js"></script>
+
+    <script>
+        $('#runBtn').click(function () {
+            $('#myDiv').animate({
+                width: '300px',
+                fontSize: '48px',
+                borderWidth: '6px',
+                marginLeft: '40px'
+            }, 1000).css({
+                backgroundColor: '#d53a73'
+            });
+        });
+
+        $('#returnBtn').click(function () {
+            $('#myDiv').animate({
+                width: '100px',
+                fontSize: '16px',
+                borderWidth: '2px',
+                marginLeft: '0'
+            }, 1000).css({
+                backgroundColor: '#eba1bd'
+            });
+        });
+    </script>
+
+</body>
+
+</html>

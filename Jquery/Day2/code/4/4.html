@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="$c.createCookie('testKey', 'helloWorld', 1)">Create Cookie</button>
+    <button onclick="alert($c.getCookie('testKey'))">Get Cookie</button>
+    <button onclick="alert(JSON.stringify($c.getAllCookies()))">Get All Cookies</button>
+    <button onclick="alert($c.hasCookie('testKey'))">Has Cookie?</button>
+    <button onclick="$c.deleteCookie('testKey'); alert('Cookie deleted')">Delete Cookie</button>
+
+
+    <script src="../../jquery-3.7.1.js"></script>
+    <script>
+        (function (global) {
+            var $c = global.$c || {};
+
+            $c.createCookie = function (key, value, expireDays) {
+                try {
+                    validate('key', key, arguments);
+                } catch (error) {
+                    console.error("Validation error:", error.message);
+                    return;
+                }
+
+                var cookieString = key + "=" + value;
+                if (typeof expireDays !== "undefined") {
+                    var date = new Date();
+                    date.setDate(date.getDate() + expireDays);
+                    cookieString += "; expires=" + date.toUTCString();
+                }
+
+                document.cookie = cookieString;
+            };
+
+            $c.getAllCookies = function () {
+                var associativeArray = {};
+                var arrCookie = document.cookie.split("; ");
+                for (var i = 0; i < arrCookie.length; i++) {
+                    var splitted = arrCookie[i].split("=");
+                    associativeArray[splitted[0]] = splitted[1];
+                }
+                return associativeArray;
+            };
+
+            $c.getCookie = function (key) {
+                if (!key || typeof key !== "string") {
+                    throw new Error("Key must be a non-empty string.");
+                }
+                var associativeArray = $c.getAllCookies();
+                return associativeArray[key] !== undefined
+                    ? associativeArray[key]
+                    : "not found";
+            };
+
+            $c.hasCookie = function (key) {
+                var associativeArray = $c.getAllCookies();
+                return associativeArray[key] !== undefined;
+            };
+
+            $c.deleteCookie = function (key) {
+                $c.createCookie(key, "", -1);
+            };
+
+            // This function is for validation purposes
+            function validate(fieldType, value) {
+                switch (fieldType) {
+                    case "key":
+                        if (!value || typeof value !== "string") {
+                            throw new Error("Key must be a non-empty string.");
+                        }
+                        if (value.length < 3) {
+                            throw new Error("Key must be at least 3 characters long.");
+                        }
+                        break;
+
+                    case "value":
+                        if (!value || typeof value !== "string") {
+                            throw new Error("Value must be a non-empty string.");
+                        }
+                        break;
+                }
+            }
+
+            $c.noConflict = function () {
+                global.$c = $c;
+                return $c;
+            };
+            global.$c = $c;
+
+        })(window);
+
+    </script>
+</body>
+
+</html>

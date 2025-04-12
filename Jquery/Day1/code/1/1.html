@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="stylesheet" href="./1.css">
+</head>
+
+<body>
+    <div class="btn-container">
+        <button>About</button>
+        <button>Gallery</button>
+        <button>Services</button>
+        <button>Complain</button>
+    </div>
+
+    <div class="about">
+        <p>Story About Snowman</p>
+    </div>
+
+    <div class="slider">
+        <img src="../../task/task/task resourses/left.png" alt="" class="img left">
+        <img src="../../task/task/task resourses/1.jpg" alt="" class="slider-img">
+        <img src="../../task/task/task resourses/right.png" alt="" class="img right">
+    </div>
+
+    <div class="dropdown">
+        <!-- <div class=""> -->
+        <p>Item 1</p>
+        <p>Item 2</p>
+        <p>Item 3</p>
+        <!-- </div> -->
+    </div>
+
+    <form action="" id="myForm">
+        <div class="input-container">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="input-container">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="input-container">
+            <label for="phone">Phone</label>
+            <input type="number" name="phone" id="phone">
+        </div>
+        <div class="input-container">
+            <label for="complain">Complain</label>
+            <textarea name="complain" id="complain"></textarea>
+        </div>
+        <input type="submit" name="send" id="send" value="send">
+    </form>
+
+    <div id="formData" style="display:none;">
+        <h3>Submitted Data:</h3>
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+        <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+        <p><strong>Complain:</strong> <span id="displayComplain"></span></p>
+        <button>go back</button>
+    </div>
+
+    <script src="../../../jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".slider").hide();
+            $(".about").hide();
+            $("form").hide();
+            $(".dropdown").hide();
+
+
+            $(".btn-container button").eq(0).click(function () {
+                $(".slider").hide();
+                $(".about").fadeToggle(500);
+                $("form").hide();
+                $(".dropdown").hide();
+            });
+
+            $(".btn-container button").eq(1).click(function () {
+                $(".slider").fadeToggle(500);
+                $(".about").hide();
+                $("form").hide();
+                $(".dropdown").hide();
+            });
+
+            $(".btn-container button").click(function () {
+                $(".btn-container button").removeClass("active");
+                $(this).addClass("active");
+            });
+
+
+            var counter = 0;
+            $(".right").click(function () {
+                if (counter >= 8) {
+                    return;
+                }
+                counter++;
+                $(".slider-img").fadeOut(500, function () {
+                    $(this).attr('src', '../../task/task/task resourses/' + counter + '.jpg')
+                        .fadeIn(500);
+                });
+            });
+            $(".left").click(function () {
+                if (counter <= 0) {
+                    return;
+                }
+                counter++;
+                $(".slider-img").fadeOut(500, function () {
+                    $(this).attr('src', '../../task/task/task resourses/' + counter + '.jpg')
+                        .fadeIn(500);
+                });
+            });
+            $(".btn-container button").eq(2).click(function () {
+                $(".dropdown").slideToggle(600);
+                $(".about").hide();
+                $(".slider").hide();
+                $("form").hide();
+            });
+
+            // Handle "Complain" button click
+            $(".btn-container button").eq(3).click(function () {
+                $(".dropdown").hide();
+                $(".about").hide();
+                $(".slider").hide();
+                $("#formData").hide(); // just in case it was open
+                $("#myForm").fadeToggle(600);
+            });
+
+            // Handle form submit
+            $("#myForm").submit(function (e) {
+                e.preventDefault();
+
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var complain = $("#complain").val();
+
+                $("#myForm").fadeOut(600, function () {
+                    $("#displayName").text(name);
+                    $("#displayEmail").text(email);
+                    $("#displayPhone").text(phone);
+                    $("#displayComplain").text(complain);
+                    $("#formData").fadeIn(600);
+                });
+            });
+
+            $("#formData button").click(function () {
+                $("#formData").fadeOut(600, function () {
+                    $("#myForm").fadeIn(600);
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

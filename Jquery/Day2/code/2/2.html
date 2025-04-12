@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #photo {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 50px;
+        }
+
+        button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src=".././1.jpg" id="photo" alt="photo">
+    <button id="animateBtn">Animate</button>
+
+    <script src="../../jquery-3.7.1.js"></script>
+
+    <script>
+        $('#animateBtn').click(function () {
+            const $photo = $('#photo');
+            const windowWidth = $(window).width();
+            const windowHeight = $(window).height();
+            const photoWidth = $photo.width();
+            const photoHeight = $photo.height();
+
+            let left = 0;
+            let top = 60 + 'px';
+            let degree = 0;
+            let scale = 1;
+
+            $photo.animate({
+                left: windowWidth - photoWidth - 20,
+                top: 550
+            }, {
+                duration: 5000,
+                step: function (now, fx) {
+                    if (fx.prop === "left") {
+                        degree += 2;
+                    }
+                    if (fx.prop === "top") {
+                        scale += 0.01;
+                    }
+
+                    const scaledWidth = photoWidth * scale;
+                    const scaledHeight = photoHeight * scale;
+                    const currentTop = Math.min(fx.now, 600);
+
+                    $photo.css({
+                        transform: `rotate(${degree}deg) scale(${scale})`,
+                        left: Math.min(now, windowWidth - scaledWidth - 20),
+                        top: currentTop
+                    });
+                },
+                complete: function () {
+                    $photo.css('transform', `rotate(0deg) scale(${scale})`);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

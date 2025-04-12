@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main {
+            width: 300px;
+            height: 300px;
+            background-color: lightgray;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dragable {
+            background-color: palevioletred;
+            padding: 10px;
+            height: 200px;
+            cursor: move;
+        }
+
+        .dragable img {
+            width: 100px;
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../3.jpg" alt="" class="main">
+    <div class="dragable">
+        <img src="../2.jpg" alt="">
+    </div>
+
+    <script src="../../jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $(".dragable").draggable();
+
+            $(".dragable").hover(
+                function () {
+                    $(this).effect("shake", { distance: 5, times: 2 }, 300);
+                }
+            );
+
+            $(".main").droppable({
+                drop: function (event, ui) {
+                    var dragable = ui.helper;
+                    dragable.fadeTo(200, 0);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
