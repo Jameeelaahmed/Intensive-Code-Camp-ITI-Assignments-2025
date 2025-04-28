@@ -1,0 +1,26 @@
+body {
+    min-height: 100vh;
+}
+
+button {
+    width: 80%;
+    height: 100px;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: lightblue;
+    transition: 0.4s;
+    border: 5px solid lightpink;
+    border-radius: 12px;
+    transition: 0.7s;
+    color: white;
+    font-weight: bold;
+    outline: none;
+}
+
+button:hover {
+    background-color: lightpink;
+    transition: 0.4s;
+    border: 5px solid lightblue;
+    border-radius: 12px;
+    box-shadow: lightblue -2px -5px 10px, lightpink 5px 10px 10px;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="con">
+            <label for="">Red</label>
+            <input type="range" id="red" min="0" max="255">
+        </div>
+        <div>
+            <label for="">Green</label>
+            <input type="range" id="green" value="green" min="0" max="255">
+        </div>
+        <div>
+            <label for="">Blue</label>
+            <input type="range" id="blue" value="blue" min="0" max="255">
+        </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, nulla. Rem, maiores. Rerum nisi consequuntur
+        possimus voluptates nihil enim atque deleniti eum esse quo? Nisi doloribus voluptatum asperiores ducimus
+        quaerat?</p>
+    <script>
+        var red = document.getElementById('red');
+        var green = document.getElementById('green');
+        var blue = document.getElementById('blue');
+        var par = document.getElementsByTagName('p')[0];
+
+        function updateColor() {
+            const redVal = red.value;
+            const greenVal = green.value;
+            const blueVal = blue.value;
+            par.style.color = `rgb(${redVal}, ${greenVal}, ${blueVal})`;
+        }
+
+        red.addEventListener("input", updateColor);
+        green.addEventListener("input", updateColor);
+        blue.addEventListener("input", updateColor);
+    </script>
+</body>
+
+</html>

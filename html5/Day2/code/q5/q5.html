@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const skyGradient = ctx.createLinearGradient(0, 0, 0, canvas.height / 2);
+        skyGradient.addColorStop(0, "deepskyblue");
+        skyGradient.addColorStop(1, "white");
+
+        ctx.fillStyle = skyGradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height / 2);
+
+        const grassGradient = ctx.createLinearGradient(0, canvas.height / 2, 0, canvas.height);
+        grassGradient.addColorStop(0, "green");
+        grassGradient.addColorStop(1, "lightgreen");
+
+        ctx.fillStyle = grassGradient;
+        ctx.fillRect(0, canvas.height / 2, canvas.width, canvas.height / 2);
+
+        const goalWidth = 100;
+        const goalHeight = 50;
+        const centerX = canvas.width / 2;
+        const topY = 150;
+
+        ctx.beginPath();
+        ctx.moveTo(centerX - goalWidth / 2, topY + goalHeight);
+        ctx.lineTo(centerX - goalWidth / 2, topY);
+        ctx.lineTo(centerX + goalWidth / 2, topY);
+        ctx.lineTo(centerX + goalWidth / 2, topY + goalHeight);
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "black";
+        ctx.stroke();
+    </script>
+</body>
+
+</html>

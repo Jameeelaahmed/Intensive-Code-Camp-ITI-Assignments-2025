@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>canvas Meme</title>
+</head>
+
+<body>
+    <canvas id="memeCanvas" width="600" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("memeCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const img = new Image();
+        img.src = "../assets/pic.jpg";
+
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            ctx.shadowColor = "black";
+            ctx.shadowBlur = 5;
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+
+            ctx.font = "bold 28px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+
+            ctx.fillText("Jameela", canvas.width / 2, canvas.height - 20);
+        };
+    </script>
+</body>
+
+</html>

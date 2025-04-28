@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female<br><br>
+
+        <label for="colors">Favorite Color:</label>
+        <select id="colors" name="colors">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select><br><br>
+
+        <button type="button" id="submitBtn">Submit</button>
+    </form>
+
+    <script>
+        const isLocalStorage = typeof (Storage) !== "undefined";
+
+        const storage = isLocalStorage ? localStorage : {
+            setItem: function (key, value) {
+                const d = new Date();
+                d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+                const expires = "expires=" + d.toUTCString();
+                document.cookie = `${key}=${value}; ${expires}; path=/`;
+            },
+            getItem: function (key) {
+                const name = `${key}=`;
+                const dCookies = decodeURIComponent(document.cookie);
+                const cookieArray = dCookies.split(';');
+
+                for (let i = 0; i < cookieArray.length; i++) {
+                    let c = cookieArray[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1);
+                    if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
+                }
+                return null;
+            },
+            removeItem: function (key) {
+                document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+            },
+            clear: function () {
+                const cookies = document.cookie.split("; ");
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].split("=")[0];
+                    storage.removeItem(cookie);
+                }
+            }
+        };
+
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const color = document.getElementById('colors').value;
+
+            storage.setItem("name", name);
+            storage.setItem("age", age);
+            storage.setItem("gender", gender);
+            storage.setItem("color", color);
+        });
+    </script>
+</body>
+
+</html>

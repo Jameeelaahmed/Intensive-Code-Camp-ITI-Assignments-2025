@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flip Half Circles</title>
+    <style>
+        canvas {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="600" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let flipCount = 0;
+        let showTop = false;
+
+        function drawHalfCircle(top) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            ctx.beginPath();
+            if (top) {
+
+                ctx.arc(300, 150, 50, Math.PI, 0, false);
+            } else {
+                // Bottom half
+                ctx.arc(300, 150, 50, 0, Math.PI, false);
+            }
+            ctx.closePath();
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function drawFullCircle() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(300, 150, 50, 0, 2 * Math.PI);
+            ctx.closePath();
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function flip() {
+            if (flipCount < 10) {
+                drawHalfCircle(showTop);
+                showTop = !showTop;
+                flipCount++;
+                setTimeout(flip, 500);
+            } else {
+                drawFullCircle();
+            }
+        }
+
+        flip();
+    </script>
+
+</body>
+
+</html>

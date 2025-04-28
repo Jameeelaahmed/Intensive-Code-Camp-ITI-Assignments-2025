@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Growing Line Animation</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let x2 = 0;
+        let y2 = 0;
+
+        function drawLine() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(x2, y2);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = 'brown';
+            ctx.stroke();
+
+            x2 += 2;
+            y2 += 2;
+
+            if (x2 <= canvas.width && y2 <= canvas.height) {
+                requestAnimationFrame(drawLine);
+            } else {
+                alert("animation end");
+            }
+        }
+
+        drawLine();
+    </script>
+
+</body>
+
+</html>

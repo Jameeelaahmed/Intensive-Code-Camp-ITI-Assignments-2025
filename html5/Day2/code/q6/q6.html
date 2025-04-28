@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Double Gradient Circle with N</title>
+</head>
+
+<body>
+    <canvas id="logoCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('logoCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const outerGradient = ctx.createRadialGradient(200, 200, 50, 200, 200, 150);
+        outerGradient.addColorStop(0, '#6aa9ff');
+        outerGradient.addColorStop(1, '#0033cc');
+
+        ctx.fillStyle = outerGradient;
+        ctx.beginPath();
+        ctx.arc(200, 200, 150, 0, 2 * Math.PI);
+        ctx.fill();
+
+        const innerGradient = ctx.createRadialGradient(200, 200, 20, 200, 200, 120);
+        innerGradient.addColorStop(0, '#cce6ff');
+        innerGradient.addColorStop(1, '#3366cc');
+
+        ctx.fillStyle = innerGradient;
+        ctx.beginPath();
+        ctx.arc(200, 200, 120, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 120px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('J', 200, 210);
+    </script>
+</body>
+
+</html>

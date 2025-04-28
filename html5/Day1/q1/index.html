@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="video">
+            <video controls width="70%" poster="/assets/frozen.jpg" id="videoPlayer">
+                <source src="/assets/frozen.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="buttons">
+            <button type="button" onclick="playVideo()" id="play">Play</button>
+            <button type="button" onclick="stopVideo()" id="stop">Stop</button>
+            <button type="button" onclick="minTen()" id="minTen">
+                << </button>
+                    <button type="button" onclick="minFive()" id="minFive">
+                        < </button>
+                            <button type="button" onclick="plusFive()" id="plusFive"> > </button>
+                            <button type="button" onclick="plusTen()" id="plusTen"> >> </button>
+                            <button id="mute">Mute</button>
+                            <input type="range" name="" id="volume" step="10" min="0" max="100">
+        </div>
+
+        <div class="range">
+            <input type="range" id="range">
+            <p><span id="duration">0.00</span>/1.50</p>
+        </div>
+        <div>
+            <label for="">Speed</label>
+            <input type="range" id="speed" min="1" max="17">
+        </div>
+    </div>
+    <script>
+        var range = document.getElementById('range')
+        var videoPlayer = document.getElementById('videoPlayer')
+        var mute = document.getElementById('mute')
+        var volume = document.getElementById('volume')
+        var due = document.getElementById('duration')
+        var playback = document.getElementById('speed')
+        function playVideo() {
+            videoPlayer.play();
+        }
+        function stopVideo() {
+            videoPlayer.pause();
+        }
+
+        function minFive() {
+            videoPlayer.currentTime -= 5
+        }
+
+        function plusFive() {
+            videoPlayer.currentTime += 5
+        }
+        function minTen() {
+            videoPlayer.currentTime -= 10
+        }
+
+        function plusTen() {
+            videoPlayer.currentTime += 10
+        }
+
+
+        videoPlayer.addEventListener("timeupdate", function () {
+            const minutes = Math.floor(videoPlayer.currentTime / 60);
+            const seconds = Math.floor(videoPlayer.currentTime % 60);
+            const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            range.value = videoPlayer.currentTime
+            due.innerHTML = formattedTime
+        })
+
+        range.value = 0
+        playback.value = 0
+        range.addEventListener('click', function () {
+            videoPlayer.currentTime = range.value
+        })
+
+        mute.addEventListener('click', function () {
+            videoPlayer.muted = !videoPlayer.muted;
+            mute.innerHTML = videoPlayer.muted ? "Unmute" : "Mute"
+        })
+
+        volume.addEventListener('click', function () {
+            videoPlayer.volume = volume.value / 100;
+        })
+
+        playback.addEventListener('click', function () {
+            videoPlayer.playbackRate = playback.value
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch Users with Fetch API</title>
+</head>
+
+<body>
+    <h2>list</h2>
+    <ul id="list"></ul>
+
+    <script>
+        function fetchUsers() {
+            fetch("https://jsonplaceholder.typicode.com/users")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("network want ok");
+                    }
+                    return response.json();
+                })
+                .then(users => {
+                    console.log(users);
+                    const list = document.getElementById("list");
+                    users.forEach(user => {
+                        const li = document.createElement("li");
+                        li.textContent = user.name;
+                        list.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error("there was a problem with fetch operation:", error);
+                });
+        }
+
+        window.onload = fetchUsers;
+    </script>
+</body>
+
+</html>
