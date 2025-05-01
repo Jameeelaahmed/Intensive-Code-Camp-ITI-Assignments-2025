@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Barbie</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jaro:opsz@6..72&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Silkscreen:wght@400;700&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+
+        body {
+            background-color: #ffa0cf;
+            color: white;
+        }
+
+        .sidebar {
+            background: #FF69B4;
+            box-shadow: 5px 0px 10px #cf106f;
+        }
+
+        .circle {
+            /* width: 100px;
+            height: 100px; */
+            background: #ccc;
+            border-radius: 50%;
+            margin: 1rem auto;
+            overflow: hidden;
+        }
+
+        h1,
+        h5,
+        .sidebar {
+            color: #cf106f;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        .sidebar {
+            font-size: 25px;
+            height: auto;
+        }
+
+        .line {
+            width: 90%;
+            text-align: center;
+            height: 5px;
+            border-radius: 10px;
+            background-color: #cf106f;
+            position: relative;
+        }
+
+        .line::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 35px;
+            aspect-ratio: 1;
+            background:
+                radial-gradient(at 70% 31%, #cf106f 29%, #0000 30%),
+                radial-gradient(at 30% 31%, #cf106f 29%, #0000 30%),
+                conic-gradient(from -45deg at 50% 84%, #cf106f 90deg, #0000 0) bottom/100% 50% no-repeat;
+        }
+
+        i {
+            color: #cf106f;
+        }
+
+        .shape {
+            position: relative;
+            height: 120px;
+            width: 100px;
+            background-color: #cf106f;
+        }
+
+        .shape::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background-color: #FF69B4;
+            border-radius: 50%;
+        }
+
+        .card {
+            background-color: #f9cae1;
+            border-radius: 20px;
+            border: 5px solid #cf106f;
+            box-shadow: 5px 5px 10px #8c285a;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card-text {
+            color: white;
+        }
+
+        .main-img {
+            transition: 0.4s;
+        }
+
+        .main-img:hover {
+            /* transform: rotate(360deg); */
+            transform: scale(1.1);
+            box-shadow: 5px 5px 10px #8c285a;
+        }
+    </style>
+</head>
+
+<body class="fw-bold fst-italic">
+
+    <div class="container-fluid">
+        <div class="row flex-column flex-md-row">
+            <div class="col-12 col-md-2 sidebar text-center">
+                <div class="justify-content-center d-none d-md-flex">
+                    <div class="shape"></div>
+                </div>
+
+                <!-- <div class="mx-auto mb-3 w- circle"> -->
+                <img src="./assets/barbie.jpg" alt="Barbie" class="main-img rounded-circle col-6 col-md-8 mt-4">
+                <!-- </div> -->
+                <p>Barbie</p>
+
+                <!-- Row of 3 smaller circles -->
+                <div class="d-flex flex-row flex-md-column align-items-center justify-content-around">
+                    <div class="d-flex flex-column">
+                        <div class="mx-auto mb-2 col-4 col-md-8 d-flex justify-content-center align-items-center">
+                            <img src="./assets/ken.png" alt="Ken" class="main-img rounded-circle col-12">
+                        </div>
+                        <p>Ken</p>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <div class="mx-auto mb-2 col-4 col-md-8 d-flex justify-content-center align-items-center">
+                            <img src="./assets/raquelle.png" alt="Raquelle" class="main-img rounded-circle col-12">
+                        </div>
+                        <p>Raquelle</p>
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <div class="mx-auto mb-2 col-4 col-md-8 d-flex justify-content-center align-items-center">
+                            <img src="./assets/rayan.png" alt="Rayan" class="main-img rounded-circle col-12">
+                        </div>
+                        <p>Rayan</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-md-10 p-4">
+                <div class="mb-4">
+                    <h1>Barbie</h1>
+                    <p>Get ready to embark on an unforgettable adventure with Barbie in this bold, imaginative, and
+                        heartwarming movie! ...</p>
+                </div>
+
+                <div class="row text-center mb-4">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <img src="./assets/1.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <img src="./assets/2.png" alt="" class="w-100">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="./assets/3.png" alt="" class="w-100">
+                    </div>
+                </div>
+
+                <div class="row text-center mb-4">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="bi bi-arrow-through-heart-fill fs-1 mb-3"></i>
+                                <h5>Barbie's Adventure in Paris</h5>
+                                <p class="card-text">Join Barbie and her friends as they explore Paris...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="bi bi-heart fs-1 mb-3"></i>
+                                <h5>Royal Dreams and Stylish Missions</h5>
+                                <p class="card-text">Barbie steps into a world of royalty and mystery...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <i class="bi bi-arrow-through-heart-fill fs-1 mb-3"></i>
+                                <h5>High-Speed Dreams</h5>
+                                <p class="card-text">Barbie and Ken gear up for a thrilling drive, where style meets
+                                    speed and every journey turns into an adventure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-center mb-5">
+                    <div class="line"></div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-0 ">
+                        <h5 class="mb-3">Barbie: A Day in the Life | Barbie Vlogs</h5>
+                        <video src="./assets/video.mp4" controls class="w-100 d-none d-md-block"></video>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <p>Weekends are for relaxation! I love to sleep in, eat a yummy breakfast, and do activities
+                            like
+                            walking on the beach, singing my favorite songs, and doing my makeup routine. Come join me!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
