@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css"/>
+  
+  </head>
+  <body>
+    <div class="main">
+      <!--style h1 to have a primary color use nesting-->
+      <h1 class="main-title">My Blog</h1>
+
+      <!--style p to have a secondary color use nesting-->
+      <p class="main-subtitle">This is my own blog you would love to read</p>
+
+      <!--style button to have a primary color and secondary color when hover use nesting-->
+      <button class="main-btn">Click here</button>
+    </div>
+    <div class="content">
+      <!--for all "font-" classes please use @each-->
+      <!--let it has a font-size equal to 18px-->
+      <div class="font-18px">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s
+        </p>
+      </div>
+
+      <!--let it has a font-size equal to 16px-->
+      <div class="font-16px">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s
+        </p>
+      </div>
+
+      <!--let it has a font-size equal to 14px-->
+      <div class="font-14px">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s
+        </p>
+      </div>
+    </div>
+
+    <!--let this button take the half screen width at tablet and full width mobile screens-->
+    <!--use media queries scss way-->
+    <button class="finish-btn">Finish</button>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+@import './colors';
+
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@mixin button-style{
+    background-color: $primary;
+    color:$secondary;
+    border: 3px solid $secondary;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+.main {
+    .main-title{
+        color:$primary ;
+    }
+
+    .main-subtitle{
+        color: $secondary;
+        font-weight: bold;
+    }
+
+    .main-btn{
+        @include button-style;
+        &:hover{
+            background-color: $secondary;
+            color:$primary;
+            border: 3px solid $primary;
+        }
+    }
+}
+
+$f-size:18px,16px,14px;
+
+@each $val in $f-size{
+    .font-#{$val}{
+        font-size:$val;
+    }
+}
+
+$tablet:768px;
+// $mobile:380px;
+
+
+.finish-btn{
+    @include button-style;
+}
+
+@media (min-width:$tablet){
+    .finish-btn{
+        width:50%;
+    }
+}
+
+@media (max-width:$tablet){
+    .finish-btn{
+        width: 100%;
+    }
+}
+
+
+// ********************
+
+form{
+    width:fit-content;
+    background-color: $form-color;
+    color: white;
+    margin:0 auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid $form-border;
+    box-shadow: 5px 5px 6px  $form-border;
+}
+
+.row{
+  width: fit-content;
+}
+
+input{
+    padding: 10px 20px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.container{
+    width: 100%;
+   
+}
+
+.input-container{
+    width: 100%;
+    
+}
+
+
+.submit{
+    width: fit-content;
+    background-color: white;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+}
+
+label{
+    margin: 5px 0;
+}
+
+
+
+//* @media (max-width:930px){
+//    * .container{
+//      *   flex-direction: column;
+//     *}
+//* }
+//* @media (max-width:530px){
+//   *  .input-container{
+//   *      flex-direction: column;
+//    * }
+// *}
+
+.row div{
+  display: inline-block;
+  label{
+    display: block;
+  }
+}
+@mixin createLayout($noOfCols,$screenName,$breakpoint){
+  @media(min-width: $breakpoint){
+      @if $screenName==" "{
+          @for $i from 1 through $noOfCols{
+              .col-#{$i}{
+                  width:($i/$noOfCols)*100%;
+              }
+
+          }
+      }
+      @else {
+          @for $i from 1 through $noOfCols{
+              .col-#{$screenName}-#{$i}{
+                  width:($i/$noOfCols)*100%;  
+              }
+          }
+      }
+  }
+}
+  
+  @include createLayout(12,"", 576px);
+  @include createLayout(12, "md", 768px); 
+  @include createLayout(12, "lg", 992px);
+  
+
