@@ -57,4 +57,13 @@ Contains completed assignments and projects from the ITI (Information Technology
 │   └── javascript-fundamentals/
 ├── Advanced JS
 ├── jQuery
+├── EcmaScript (ES6)
+├── Responsive Web Design
+│   ├── Flex
+│   ├── Grid
+│   └── Bootstrab
+├── TypeScript
+├── SCSS
+├── NodeJs
+
 
