@@ -1,0 +1,9 @@
+.movies{
+    padding: 50px;
+    display: flex;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    /* align-items: center; */
+    width: 100%;
+    gap: 10px;
+}

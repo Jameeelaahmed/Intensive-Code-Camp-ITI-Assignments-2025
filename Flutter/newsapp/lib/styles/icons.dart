@@ -1,0 +1,1 @@
+const String newsImage = 'assets/images/news.jpeg';

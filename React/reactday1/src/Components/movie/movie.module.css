@@ -1,0 +1,22 @@
+.movie{
+    background-color:#f7c600;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px 5px #413400;
+    /* width: 80%; */
+    width: 410PX;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie img{
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.movie h1{
+    margin-bottom: 20px;
+}
