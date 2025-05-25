@@ -43,7 +43,7 @@
 Contains completed assignments and projects from the ITI (Information Technology Institute) intensive training program covering:
 
 - Frontend Development (HTML5, CSS3, JavaScript/TypeScript)
-- Cross-Platform Mobile Development (Ionic, Flutter)
+- Cross-Platform Mobile Development (Flutter,React Native)
 - Modern UI/UX Practices
 - API Integration
 - State Management
