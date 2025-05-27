@@ -1,0 +1,32 @@
+.movie {
+  background-color: rgba(127, 255, 212, 0.2); 
+  border-radius: 15px;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 10px;
+  overflow: hidden;
+  color: white;
+}
+
+.movie img{
+    width: 350px;
+    z-index: 1;
+}
+
+.title{
+    padding: 10px;
+    width: 300px;
+}
+
+.movie p{
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #f0f0f0; 
+}
+
+.movie strong{
+    color: #ff6347; 
+}

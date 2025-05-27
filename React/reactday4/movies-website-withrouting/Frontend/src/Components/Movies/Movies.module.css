@@ -1,0 +1,19 @@
+.movie_container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.add_margin{
+    margin-top: 100px;
+}
+.movies{
+    display: flex;
+      flex-wrap: wrap;
+      column-gap: 10px;
+}
+
+.img{
+    width: 300px;
+}
+

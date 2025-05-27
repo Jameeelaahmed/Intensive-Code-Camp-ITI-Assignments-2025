@@ -1,0 +1,262 @@
+{
+  "movies": [
+    {
+      "id": "disney-002",
+      "title": "Raya and the Last Dragon",
+      "release_date": "2021-03-05",
+      "runtime": 107,
+      "rating": 7.3,
+      "box_office": {
+        "domestic": 54200000,
+        "international": 67100000,
+        "total": 121300000
+      },
+      "overview": "In a realm known as Kumandra, a re-imagined Earth inhabited by an ancient civilization, a warrior named Raya is determined to find the last dragon to save her divided home world.",
+      "cast": [
+        {"actor": "Kelly Marie Tran", "character": "Raya"},
+        {"actor": "Awkwafina", "character": "Sisu"}
+      ],
+      "directors": ["Don Hall", "Carlos López Estrada"],
+      "writers": ["Qui Nguyen", "Adele Lim"],
+      "image_url": "https://image.tmdb.org/t/p/original/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg",
+      "cover_img": "https://allears.net/wp-content/uploads/2021/06/disney-raya-and-the-last-dragon-cover-photo-poster.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=1VIZ89FEjYI",
+      "genres": ["Animation", "Action", "Adventure", "Fantasy"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Animated Classics",
+      "phase": 1
+    },
+    {
+      "id": "disney-003",
+      "title": "Encanto",
+      "release_date": "2021-11-24",
+      "runtime": 102,
+      "rating": 7.2,
+      "box_office": {
+        "domestic": 96000000,
+        "international": 160000000,
+        "total": 256000000
+      },
+      "overview": "A young Colombian girl has to face the frustration of being the only member of her family without magical powers.",
+      "cast": [
+        {"actor": "Stephanie Beatriz", "character": "Mirabel Madrigal"},
+        {"actor": "John Leguizamo", "character": "Bruno Madrigal"}
+      ],
+      "directors": ["Jared Bush", "Byron Howard"],
+      "writers": ["Charise Castro Smith", "Jared Bush"],
+      "image_url": "https://image.tmdb.org/t/p/original/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+      "cover_img": "https://image.tmdb.org/t/p/w1280/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=CaimKeDcudo",
+      "genres": ["Animation", "Family", "Fantasy", "Comedy"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Animated Classics",
+      "phase": 1
+    },
+    {
+      "id": "disney-005",
+      "title": "Frozen",
+      "release_date": "2013-11-27",
+      "runtime": 102,
+      "rating": 7.4,
+      "box_office": {
+        "domestic": 400738009,
+        "international": 875742326,
+        "total": 1276480335
+      },
+      "overview": "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
+      "cast": [
+        {"actor": "Kristen Bell", "character": "Anna"},
+        {"actor": "Idina Menzel", "character": "Elsa"}
+      ],
+      "directors": ["Chris Buck", "Jennifer Lee"],
+      "writers": ["Jennifer Lee", "Hans Christian Andersen"],
+      "image_url": "https://image.tmdb.org/t/p/original/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
+      "cover_img": "https://image.tmdb.org/t/p/original/kgwjIb2JDHRhNk13lmSxiClFjVk.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=TbQm5doF_Uc",
+      "genres": ["Animation", "Adventure", "Family", "Fantasy"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Princess",
+      "phase": 1
+    },
+    {
+      "id": "disney-006",
+      "title": "Tangled",
+      "release_date": "2010-11-24",
+      "runtime": 100,
+      "rating": 7.7,
+      "box_office": {
+        "domestic": 200821936,
+        "international": 385760000,
+        "total": 586581936
+      },
+      "overview": "The magically long-haired Rapunzel has spent her entire life in a tower, but now that a runaway thief has stumbled upon her, she is about to discover the world for the first time, and who she really is.",
+      "cast": [
+        {"actor": "Mandy Moore", "character": "Rapunzel"},
+        {"actor": "Zachary Levi", "character": "Flynn Rider"}
+      ],
+      "directors": ["Nathan Greno", "Byron Howard"],
+      "writers": ["Dan Fogelman"],
+      "image_url": "https://image.tmdb.org/t/p/original/ym7Kst6a4uodryxqbGOxmewF235.jpg",
+      "cover_img": "https://image.tmdb.org/t/p/w1280/7oA6riXk7EbYQI1CG7dH3ZtSe0o.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=JYKpIr1lSG0",
+      "genres": ["Animation", "Adventure", "Family", "Fantasy"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Princess",
+      "phase": 1
+    },
+    {
+      "id": "disney-007",
+      "title": "Zootopia",
+      "release_date": "2016-03-04",
+      "runtime": 108,
+      "rating": 8.0,
+      "box_office": {
+        "domestic": 341268248,
+        "international": 682515104,
+        "total": 1023783352
+      },
+      "overview": "In a city of anthropomorphic animals, a rookie bunny cop and a cynical con artist fox must work together to uncover a conspiracy.",
+      "cast": [
+        {"actor": "Ginnifer Goodwin", "character": "Judy Hopps"},
+        {"actor": "Jason Bateman", "character": "Nick Wilde"}
+      ],
+      "directors": ["Byron Howard", "Rich Moore"],
+      "writers": ["Jared Bush", "Phil Johnston"],
+      "image_url": "https://image.tmdb.org/t/p/original/hlK0e0wAQ3VLuJcsfIYPvb4JVud.jpg",
+      "cover_img": "https://image.tmdb.org/t/p/w1280/yS5UJjsQd1sxtowWNFxQ7Qi3QmW.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=jWM0ct-OLsM",
+      "genres": ["Animation", "Adventure", "Comedy", "Family"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Animated Classics",
+      "phase": 1
+    },
+    {
+      "id": "disney-008",
+      "title": "The Little Mermaid",
+      "release_date": "2023-05-26",
+      "runtime": 135,
+      "rating": 7.2,
+      "box_office": {
+        "domestic": 298172056,
+        "international": 263800000,
+        "total": 561972056
+      },
+      "overview": "The youngest of King Triton's daughters, Ariel is a beautiful and spirited young mermaid with a thirst for adventure. Longing to find out more about the world beyond the sea, Ariel visits the surface and falls for the dashing Prince Eric.",
+      "cast": [
+        {"actor": "Halle Bailey", "character": "Ariel"},
+        {"actor": "Jonah Hauer-King", "character": "Prince Eric"}
+      ],
+      "directors": ["Rob Marshall"],
+      "writers": ["David Magee"],
+      "image_url": "https://image.tmdb.org/t/p/original/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg",
+      "cover_img": "https://a-static.besthdwallpaper.com/the-little-mermaid-2023-cast-poster-wallpaper-3440x1440-116931_15.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=kpGo2_d3oYE",
+      "genres": ["Adventure", "Family", "Fantasy", "Romance"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Princess",
+      "phase": 1
+    },
+    {
+      "id": "disney-013",
+      "title": "How to Train Your Dragon",
+      "release_date": "2010-03-26",
+      "runtime": 98,
+      "rating": 8.1,
+      "box_office": {
+        "domestic": 217581231,
+        "international": 277300000,
+        "total": 494881231
+      },
+      "overview": "A young Viking befriends a dragon, challenging his tribe’s long-standing feud with the creatures.",
+      "cast": [
+        {"actor": "Jay Baruchel", "character": "Hiccup"},
+        {"actor": "Gerard Butler", "character": "Stoick"}
+      ],
+      "directors": ["Dean DeBlois", "Chris Sanders"],
+      "writers": ["William Davies", "Dean DeBlois"],
+      "image_url": "https://image.tmdb.org/t/p/original/ygGmAO60t8GyqUo9xYeYxSZAR3b.jpg",
+      "cover_img": "https://assets.teenvogue.com/photos/67b47ad49c096931849bd4b4/16:9/w_2560%2Cc_limit/02-httyd-dm-banner-1900x660-kr-f01-021125-67ac99e0cf3df-1.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=oKiYuIsPxYk",
+      "genres": ["Animation", "Action", "Adventure", "Family"],
+      "platforms": ["Peacock", "Prime Video"],
+      "saga": "How to Train Your Dragon",
+      "phase": 1
+    },
+    {
+      "id": "disney-016",
+      "title": "Onward",
+      "release_date": "2020-03-06",
+      "runtime": 102,
+      "rating": 7.4,
+      "box_office": {
+        "domestic": 61555545,
+        "international": 67700000,
+        "total": 129255545
+      },
+      "overview": "Two elf brothers seek magic to spend one more day with their late father.",
+      "cast": [
+        {"actor": "Tom Holland", "character": "Ian Lightfoot"},
+        {"actor": "Chris Pratt", "character": "Barley Lightfoot"}
+      ],
+      "directors": ["Dan Scanlon"],
+      "writers": ["Dan Scanlon", "Jason Headley"],
+      "image_url": "https://image.tmdb.org/t/p/original/f4aul3FyD3jv3v4bul1IrkWZvzq.jpg",
+      "cover_img":"https://images.app.goo.gl/7Zx8AcwGiD9535bq5",
+      "trailer_url": "https://www.youtube.com/watch?v=gn5QmllRCn4",
+      "genres": ["Animation", "Adventure", "Comedy", "Family"],
+      "platforms": ["Disney+"],
+      "saga": "Pixar",
+      "phase": 1
+    },
+    {
+      "id": "disney-017",
+      "title": "Abominable",
+      "release_date": "2019-09-27",
+      "runtime": 97,
+      "rating": 7.0,
+      "box_office": {
+        "domestic": 60744880,
+        "international": 118000000,
+        "total": 178744880
+      },
+      "overview": "A girl helps a yeti return to its Himalayan home.",
+      "cast": [
+        {"actor": "Chloe Bennet", "character": "Yi"},
+        {"actor": "Tenzing Norgay Trainor", "character": "Jin"}
+      ],
+      "directors": ["Jill Culton"],
+      "writers": ["Jill Culton", "Todd Wilderman"],
+      "image_url": "https://image.tmdb.org/t/p/original/tn3GWm0Erehkpur8PUuYWxGpul5.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=Z9eY6ZgJ4X0",
+      "genres": ["Animation", "Adventure", "Comedy", "Family"],
+      "platforms": ["Peacock", "Hulu"],
+      "saga": "DreamWorks",
+      "phase": 1
+    },
+    {
+      "id": "disney-010",
+      "title": "Mulan",
+      "release_date": "1998-06-19",
+      "runtime": 88,
+      "rating": 7.6,
+      "box_office": {
+        "domestic": 120620254,
+        "international": 183600000,
+        "total": 304220254
+      },
+      "overview": "A woman disguises herself as a man to fight in the Imperial Army, aided by a humorous dragon.",
+      "cast": [
+        {"actor": "Ming-Na Wen", "character": "Mulan"},
+        {"actor": "Eddie Murphy", "character": "Mushu"}
+      ],
+      "directors": ["Tony Bancroft", "Barry Cook"],
+      "writers": ["Robert D. San Souci", "Rita Hsiao"],
+      "image_url": "https://image.tmdb.org/t/p/original/5TYgKxYhnhRNNwqnRAKHkgfqi2G.jpg",
+      "trailer_url": "https://www.youtube.com/watch?v=MsAniqGowKE",
+      "genres": ["Animation", "Adventure", "Family", "War"],
+      "platforms": ["Disney+"],
+      "saga": "Disney Princess",
+      "phase": 1
+    }
+  ]
+}
