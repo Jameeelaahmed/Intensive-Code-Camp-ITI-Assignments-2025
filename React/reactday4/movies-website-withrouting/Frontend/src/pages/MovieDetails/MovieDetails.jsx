@@ -1,18 +1,19 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import classes from './MovieDetails.module.css'
+import { useEffect, useContext } from 'react';
+import { MoviesContext } from '../../store/FetchingMoviesContext';
+import classes from './MovieDetails.module.css';
+
 function MovieDetails() {
     const { id } = useParams();
-    const [movie, setMovie] = useState(null);
+    const { fetchMovieById, selectedMovie, loading } = useContext(MoviesContext);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/movies/${id}`)
-            .then(res => res.json())
-            .then(data => setMovie(data))
-            .catch(err => console.error(err));
+        fetchMovieById(id);
     }, [id]);
 
-    if (!movie) return <p>Loading...</p>;
+    if (loading || !selectedMovie) return <p>Loading...</p>;
+
+    const movie = selectedMovie;
 
     return (
         <div className={classes.movie_details}>
@@ -21,18 +22,17 @@ function MovieDetails() {
                 <p><strong>Movie Rating: </strong>{movie.rating}</p>
                 <p><strong>Movie Overview: </strong>{movie.overview}</p>
                 <p><strong>Trailer URL: </strong><a>{movie.trailer_url}</a></p>
-                <p><strong>Genres: </strong><a>{movie.genres.join(' - ')}</a></p>
+                <p><strong>Genres: </strong>{movie.genres.join(' - ')}</p>
                 <div className={classes.box}>
                     <p><strong>Directors: </strong>{movie.directors.join(' - ')}</p>
                     <p><strong>Writers: </strong>{movie.writers.join(' - ')}</p>
                 </div>
             </div>
             <div className={classes.img_container}>
-                <img src={movie.cover_img} alt="" />
-                <p></p>
+                <img src={movie.cover_img} alt={movie.title} />
             </div>
         </div>
     );
 }
 
-export default MovieDetails
+export default MovieDetails;

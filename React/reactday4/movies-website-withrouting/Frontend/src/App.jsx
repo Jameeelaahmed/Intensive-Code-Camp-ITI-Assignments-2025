@@ -1,12 +1,14 @@
 
 import './App.css'
 import RoutesPage from './routes/RoutesPages'
-
+import MoviesContextProvider from './store/FetchingMoviesContext'
 function App() {
 
   return (
     <>
-      <RoutesPage />
+      <MoviesContextProvider>
+        <RoutesPage />
+      </MoviesContextProvider>
     </>
   )
 }

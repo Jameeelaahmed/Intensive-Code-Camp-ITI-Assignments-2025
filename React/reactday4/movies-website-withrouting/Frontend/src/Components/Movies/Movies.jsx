@@ -1,23 +1,12 @@
 import classes from './Movies.module.css';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import Movie from '../Movie/Movie';
 import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { MoviesContext } from '../../store/FetchingMoviesContext';
 function Movies() {
-    const [movies, setMovies] = useState([]);
+    const { movies } = useContext(MoviesContext);
     const location = useLocation().pathname;
-    useEffect(() => {
-        fetch("http://localhost:3000/movies")
-            .then((res) => res.json())
-            .then((data) => {
-                setMovies(data || []);
-                console.log(data)
-            })
-            .catch((err) => {
-                console.error("Error fetching movies:", err);
-                setMovies([]);
-            });
-    }, []);
-
     return (
         <div className={`${classes.movie_container} ${location === '/movies' ? classes.add_margin : ""}`}>
             <div className={classes.movies}>

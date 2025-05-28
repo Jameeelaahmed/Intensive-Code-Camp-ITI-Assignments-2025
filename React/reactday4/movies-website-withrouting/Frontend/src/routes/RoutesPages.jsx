@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./RootLayout";
-import About from "../pages/About/About";
-import Home from "../pages/Home/Home";
-import MoviesPage from "../pages/MoviesPage/MoviesPage";
-import MovieDetails from "../pages/MovieDetails/MovieDetails";
+import { lazy, Suspense } from 'react';
+const Home = lazy(() => import('../pages/Home/Home'));
+const About = lazy(() => import('../pages/About/About'));
+const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
+
 
 const routes = createBrowserRouter([
     {
@@ -19,5 +21,8 @@ const routes = createBrowserRouter([
 ])
 
 export default function RoutesPage() {
-    return <RouterProvider router={routes} />
+    return <Suspense fallback={<p>Loading page...</p>}>
+        <RouterProvider router={routes} />
+    </Suspense>
+
 }
