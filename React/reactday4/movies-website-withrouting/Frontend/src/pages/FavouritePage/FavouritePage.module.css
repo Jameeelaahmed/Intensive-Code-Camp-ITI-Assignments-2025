@@ -1,0 +1,56 @@
+.favMovie{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.bin_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 3px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+  margin: 10px 10px 0 0;
+}
+.bin_bottom {
+  width: 15px;
+}
+.bin_top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+}
+.bin_button:hover .bin_top {
+  transform: rotate(45deg);
+}
+.bin_button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin_button:active {
+  transform: scale(0.9);
+}
+
+
+.movie{
+   background-color: rgba(127, 255, 212, 0.2); 
+  border-radius: 15px;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.button_absolute{
+  position: absolute;
+  top: 0;
+  right: 0;
+}

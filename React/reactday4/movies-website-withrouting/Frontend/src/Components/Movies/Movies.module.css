@@ -17,3 +17,112 @@
     width: 300px;
 }
 
+.heart_container {
+  --heart-color: rgb(255, 91, 137);
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: .3s;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.heart_container .checkbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.heart_container .svg_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart_container .svg_outline,
+        .heart_container .svg-filled {
+  fill: var(--heart-color) !important;
+  position: absolute;
+}
+
+.heart_container .svg_filled {
+  animation: keyframes-svg-filled 1s;
+  display: none;
+}
+
+.heart_container .svg_celebrate {
+  position: absolute;
+  animation: keyframes-svg-celebrate .5s;
+  animation-fill-mode: forwards;
+  display: none;
+  stroke: var(--heart-color);
+  fill: var(--heart-color);
+  stroke-width: 2px;
+}
+
+.heart_container .checkbox:checked~.svg_container .svg_filled {
+  display: block
+}
+
+.heart_container .checkbox:checked~.svg_container .svg_celebrate {
+  display: block
+}
+
+@keyframes keyframes-svg-filled {
+  0% {
+    transform: scale(0);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1);
+    filter: brightness(1.5);
+  }
+}
+
+@keyframes keyframes-svg-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+    display: none;
+  }
+}
+
+.movie{
+   background-color: rgba(127, 255, 212, 0.2); 
+  border-radius: 15px;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.heartAbsolute{
+  position: absolute;
+  top: 0;
+  right: 0;
+ 
+}

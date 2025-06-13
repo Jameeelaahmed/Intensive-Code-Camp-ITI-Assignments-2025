@@ -1,0 +1,390 @@
+/* Container and Header */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Categories */
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.categoryButton {
+  padding: 0.8rem 2.2rem;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(229, 46, 113, 0.4);
+  transition: all 0.3s ease;
+}
+
+.categoryButton:hover {
+  background: linear-gradient(45deg, #e52e71, #ff8a00);
+  box-shadow: 0 7px 20px rgba(229, 46, 113, 0.6);
+}
+
+.categoryButton.active {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* Masonry Gallery using CSS Columns */
+.gallery {
+  column-count: 4;
+  column-gap: 20px;
+}
+
+.galleryItem {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 20px 15px 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galleryItem:hover .imageOverlay {
+  opacity: 1;
+}
+
+.imageInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageCategory {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.saveButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #e60023;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveButton:hover {
+  background: #ad001b;
+}
+
+.saveButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.loadMoreButton {
+  padding: 12px 35px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.loadMoreButton:hover {
+  background: #ff5252;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
+.deleteButton {
+  padding: 8px 25px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .categories {
+    gap: 8px;
+  }
+
+  .categoryButton {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .categories {
+    gap: 6px;
+  }
+
+  .categoryButton {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+
+  .saveButton {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .imageCategory {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+}
+
+/* Slider Styles */
+.sliderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.sliderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80vh;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.sliderImageWrapper {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sliderImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.imageInfoBar {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.95rem;
+  border-radius: 0 0 4px 4px;
+}
+
+.imageCounter {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .sliderContent {
+    height: 70vh;
+  }
+
+  .navButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+
+  .closeButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .sliderContent {
+    height: 60vh;
+  }
+
+  .navButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navButton:first-child {
+    left: 10px;
+  }
+
+  .navButton:last-child {
+    right: 10px;
+  }
+}

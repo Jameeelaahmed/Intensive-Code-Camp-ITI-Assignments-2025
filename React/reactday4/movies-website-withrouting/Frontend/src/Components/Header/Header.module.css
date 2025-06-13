@@ -49,4 +49,17 @@
     transition: background-color 0.4s;
 }
 
+a.fav{
+    position: absolute;
+    right: 0;
+}
 
+.favPart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favPart p{
+    margin: 0 9px;
+}

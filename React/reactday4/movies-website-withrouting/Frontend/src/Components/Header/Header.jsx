@@ -1,10 +1,13 @@
 import classes from './Header.module.css'
 import { NavLink, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import * as FaIcons from 'react-icons/fa6';
+
 function Header() {
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation().pathname;
-
+    const totalMovie = useSelector(state => state.movie.totalMovies)
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -31,6 +34,12 @@ function Header() {
                 </NavLink>
                 <NavLink to='/about'>
                     <p>About</p>
+                </NavLink>
+                <NavLink to='/favouritsPage' className={classes.fav}>
+                    <div className={classes.favPart}>
+                        <FaIcons.FaHeart />
+                        <p>({totalMovie})</p>
+                    </div>
                 </NavLink>
             </div>
         </div>

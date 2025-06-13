@@ -2,6 +2,7 @@ import classes from './Movie.module.css';
 import { Link } from 'react-router-dom';
 
 function Movie({ data }) {
+
     return (
         <Link to={`/movies/${data.id}`} className={classes.movie_link}>
             <div className={classes.movie}>

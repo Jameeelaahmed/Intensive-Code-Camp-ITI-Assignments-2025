@@ -17,7 +17,6 @@ function MainSection() {
             .then((res) => res.json())
             .then((data) => {
                 setMovies(data || []);
-                console.log(data)
             })
             .catch((err) => {
                 console.error("Error fetching movies:", err);
