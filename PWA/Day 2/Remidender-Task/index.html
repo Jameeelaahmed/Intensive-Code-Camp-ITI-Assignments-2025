@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cute Reminder App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="form-container">
+        <div class="illustration">📝✨</div>
+        <h1>Reminder App</h1>
+        <form id="reminderForm">
+          <div class="input-container">
+            <label for="title">Task Title</label>
+            <input
+              type="text"
+              placeholder="Add task title"
+              name="title"
+              id="title"
+              required
+            />
+          </div>
+
+          <div class="input-row">
+            <div class="input-container">
+              <label for="hours">Hours</label>
+              <input
+                type="number"
+                name="hours"
+                id="hours"
+                min="0"
+                max="23"
+                placeholder="0-23"
+              />
+            </div>
+
+            <div class="input-container">
+              <label for="min">Minutes</label>
+              <input
+                type="number"
+                name="min"
+                id="min"
+                min="0"
+                max="59"
+                placeholder="0-59"
+              />
+            </div>
+          </div>
+
+          <div class="input-row">
+            <div class="input-container">
+              <label for="day">Day</label>
+              <input
+                type="number"
+                name="day"
+                id="day"
+                min="1"
+                max="31"
+                placeholder="1-31"
+              />
+            </div>
+
+            <div class="input-container">
+              <label for="month">Month</label>
+              <input
+                type="number"
+                name="month"
+                id="month"
+                min="1"
+                max="12"
+                placeholder="1-12"
+              />
+            </div>
+
+            <div class="input-container">
+              <label for="year">Year</label>
+              <input
+                type="number"
+                name="year"
+                id="year"
+                min="2023"
+                max="2100"
+                placeholder="2023+"
+              />
+            </div>
+          </div>
+
+          <input type="submit" value="Add reminder" id="submitBtn" />
+        </form>
+      </div>
+
+      <div class="reminder-list">
+        <div class="reminder-header">
+          <h2>Your Reminders</h2>
+          <button class="clear-all" id="clearAllBtn">
+            <i class="fas fa-trash-alt"></i> Clear All
+          </button>
+        </div>
+        <div id="remindersContainer">
+          <div class="empty-state">
+            <i class="fas fa-calendar-check"></i>
+            <p>No reminders yet</p>
+            <p>Add your first reminder to get started!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="idb.js"></script>
+    <script src="formScript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+.disney-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Main background styles */
+.disney-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    /* Main gradient background */ linear-gradient(
+    150deg,
+    rgba(1, 58, 99, 1) 0%,
+    rgba(2, 95, 119, 1) 47%,
+    rgba(2, 128, 144, 1) 66%,
+    rgba(0, 120, 120, 1) 85%,
+    rgba(0, 100, 90, 1) 100%
+  );
+
+  /* Star overlay */
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 50% 70%,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 80% 90%,
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 15% 60%,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1.5px
+    );
+
+  background-size: 300px 300px;
+  background-attachment: fixed;
+}
+
+/* Magical particles */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+}
+
+/* Disney castle silhouette */
+.castle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, rgba(0, 40, 60, 0.7) 0%, transparent 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,120 Q200,80 300,100 T500,60 T700,80 T900,40 T1100,80 T1200,100 L1200,120 L0,120 Z" fill="rgba(0,40,60,0.5)"/></svg>');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* Twinkling stars animation */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+/* Disney characters */
+.disney-character {
+  position: absolute;
+  z-index: 5;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.disney-character .icon {
+  font-size: 80px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.mickey {
+  top: 15%;
+  left: 10%;
+}
+
+.minnie {
+  top: 20%;
+  right: 12%;
+}
+
+.castle-icon {
+  bottom: 170px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.castle-icon .icon {
+  font-size: 100px;
+}
+
+.sparkle {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0;
+  animation: sparkle-fall 8s linear infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes sparkle-fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

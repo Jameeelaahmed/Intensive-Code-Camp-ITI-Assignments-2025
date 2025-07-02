@@ -2,7 +2,7 @@ import classes from './Movies.module.css';
 // import { useState, useEffect } from 'react';
 import Movie from '../Movie/Movie';
 import { useLocation } from 'react-router-dom';
-import { useContext } from 'react';
+import { use, useContext } from 'react';
 import { MoviesContext } from '../../store/FetchingMoviesContext';
 import { useDispatch } from 'react-redux';
 import { movieActions } from '../../redux/store/movieslice';
@@ -11,10 +11,26 @@ function Movies() {
     const location = useLocation().pathname;
     const dispatch = useDispatch();
 
-    function addMovieToFavourite(movie) {
-        console.log(movie)
+    async function addMovieToFavourite(movie) {
         dispatch(movieActions.addMovieToFavourits(movie))
+        const userEmail = localStorage.getItem("userEmail");
+        const userRes = await fetch(`http://localhost:3000/users?email=${encodeURIComponent(userEmail)}`);
+        const userArr = await userRes.json();
+        const user = userArr[0];
+        console.log(user);
+
+        if (!user) return;
+
+        if (user.favorites.includes(movie.id)) return;
+
+        const updatedFavorites = [...user.favorites, movie.id];
+        await fetch(`http://localhost:3000/users/${user.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ favorites: updatedFavorites }),
+        });
     }
+
 
     return (
         <div className={`${classes.movie_container} ${location === '/movies' ? classes.add_margin : ""}`}>

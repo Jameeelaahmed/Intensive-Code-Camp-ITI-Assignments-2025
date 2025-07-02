@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+.error-message {
+  background-color: #ffebee;
+  color: #b71c1c;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+body {
+  margin: 0;
+}
+
+.MuiPaper-root {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-mui-color-scheme="dark"] .MuiPaper-root {
+  background-color: rgba(30, 30, 46, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}

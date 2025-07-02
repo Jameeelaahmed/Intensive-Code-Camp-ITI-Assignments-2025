@@ -1,0 +1,33 @@
+.authLayout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.background {
+  flex: 1;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+
+.content {
+  width: 40%;
+  min-width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: white;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .background {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    min-width: unset;
+  }
+}

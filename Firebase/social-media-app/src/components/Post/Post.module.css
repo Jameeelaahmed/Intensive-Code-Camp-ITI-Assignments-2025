@@ -1,0 +1,83 @@
+.postCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: box-shadow 0.3s;
+}
+
+.postCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.postTime {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.postContent {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.postStats {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.postActions {
+  display: flex;
+  gap: 10px;
+}
+
+.commentsSection {
+  margin-top: 15px;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.commentForm {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.commentForm input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+}

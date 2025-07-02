@@ -2,6 +2,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./RootLayout";
 import { lazy, Suspense } from 'react';
 import FavouritePage from "../pages/FavouritePage/FavouritePage";
+import SignUp from "../pages/SignUp/SignUp";
+import Login from "../pages/Login/Login";
+import Profile from "../pages/Profile/Profile";
 const Home = lazy(() => import('../pages/Home/Home'));
 const About = lazy(() => import('../pages/About/About'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage/MoviesPage'));
@@ -18,7 +21,16 @@ const routes = createBrowserRouter([
             { path: '/movies/:id', element: <MovieDetails /> },
             { path: '/about', element: <About></About> },
             { path: '/favouritsPage', element: <FavouritePage /> },
+            { path: '/profile', element: <Profile /> }
         ]
+    },
+    {
+        path: 'sign',
+        element: <SignUp />
+    },
+    {
+        path: 'login',
+        element: <Login />
     }
 ])
 

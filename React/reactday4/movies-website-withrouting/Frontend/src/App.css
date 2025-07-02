@@ -1,35 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style-type: none;
-    font-family: "Exo 2", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
 }
 
-a{
-    color: white;
-    text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-body{
-    min-height: 100vh;
-background: linear-gradient(150deg,
-  rgba(1, 58, 99, 1) 0%,
-  rgba(2, 95, 119, 1) 47%,
-  rgba(2, 128, 144, 1) 66%,
-  rgba(0, 120, 120, 1) 85%,
-  rgba(0, 100, 90, 1) 100%);
-
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    150deg,
+    rgba(1, 58, 99, 1) 0%,
+    rgba(2, 95, 119, 1) 47%,
+    rgba(2, 128, 144, 1) 66%,
+    rgba(0, 120, 120, 1) 85%,
+    rgba(0, 100, 90, 1) 100%
+  );
+  /* overflow: hidden; */
 }
-
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
-
 
 /* Chrome, Safari, Edge */
 body::-webkit-scrollbar {
@@ -98,5 +98,3 @@ body::-webkit-scrollbar-thumb:hover {
 .swiper-slide-shadow-right {
   display: none;
 }
-
-

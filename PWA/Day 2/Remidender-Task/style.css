@@ -1,0 +1,439 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ffd8e4, #d1f7ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.form-container,
+.reminder-list {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 400px;
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 150px;
+  height: 150px;
+  background: #7af0ff;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.form-container::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 120px;
+  height: 120px;
+  background: #ff7eb9;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.reminder-list::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: #ffd166;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+h1 {
+  text-align: center;
+  color: #5a4e6d;
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h1::after {
+  content: "✏️";
+  position: absolute;
+  right: -40px;
+  top: 0;
+}
+
+h1::before {
+  content: "⏰";
+  position: absolute;
+  left: -40px;
+  top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+  color: #5a4e6d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+label::before {
+  content: "→";
+  color: #ff7eb9;
+}
+
+input:not([type="submit"]) {
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+input:not([type="submit"]):focus {
+  border-color: #ff7eb9;
+  box-shadow: 0 0 0 3px rgba(255, 126, 185, 0.2);
+  outline: none;
+  background-color: white;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+.input-row .input-container {
+  flex: 1;
+}
+
+input[type="submit"] {
+  background: linear-gradient(to right, #ff7eb9, #7af0ff);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 126, 185, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 126, 185, 0.4);
+}
+
+input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+input[type="submit"]::after {
+  content: "➕";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.illustration {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 60px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.reminder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.reminder-header h2 {
+  color: #5a4e6d;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reminder-header h2::before {
+  content: "📋";
+}
+
+#remindersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Reminder item styling */
+.reminder-item {
+  background: linear-gradient(to right, #f8f5ff, #f0fdff);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #ff7eb9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reminder-content {
+  flex: 1;
+  padding-right: 15px;
+}
+
+.reminder-title {
+  font-weight: 500;
+  color: #5a4e6d;
+  margin-bottom: 5px;
+}
+
+.reminder-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.reminder-time {
+  background: #ffd166;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: center;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #d1d1d1;
+}
+
+/* Delete button styling */
+.delete-btn {
+  background: rgba(255, 107, 107, 0.1);
+  border: none;
+  color: #ff6b6b;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 107, 107, 0.2);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Clear all button styling */
+.clear-all {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.clear-all:hover {
+  background: rgba(255, 107, 107, 0.2);
+  border-color: rgba(255, 107, 107, 0.5);
+  transform: translateY(-2px);
+}
+
+.clear-all:active {
+  transform: translateY(0);
+}
+
+/* Notified task styling */
+.reminder-item.notified {
+  opacity: 0.7;
+  background: linear-gradient(to right, #f5f5f5, #eeeeee);
+  border-left-color: #cccccc;
+}
+
+.reminder-item.notified .reminder-text {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+.reminder-item.notified .reminder-date {
+  color: #aaaaaa;
+}
+
+.reminder-item.notified .reminder-time {
+  background: #e0e0e0;
+  color: #888888;
+}
+
+.reminder-item.notified::after {
+  content: "✓ Notified";
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  font-size: 12px;
+  color: #666;
+  background: rgba(76, 175, 80, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .form-container,
+  .reminder-list {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .input-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-container,
+  .reminder-list {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .reminder-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .reminder-time {
+    align-self: flex-start;
+  }
+
+  .reminder-actions {
+    align-self: flex-end;
+  }
+}
+
+/* Swirl animation for delete */
+@keyframes swirl {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg) scale(0);
+    opacity: 0;
+  }
+}
+
+.swirl-out {
+  animation: swirl 0.5s forwards;
+}
