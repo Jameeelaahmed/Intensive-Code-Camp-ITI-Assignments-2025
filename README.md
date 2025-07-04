@@ -68,5 +68,10 @@ Contains completed assignments and projects from the ITI (Information Technology
 ├── Flutter
 │   ├── Dart
 │   └── Flutter
-├── ReactJs
+├── React.js
+├── Next.js
+├── React Native
+├── PWA
+├── Design Pattern
+├── Firebase
 
