@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProtoType</title>
+  </head>
+  <body>
+    <script>
+      function Document(header, footer, pages, text) {
+        this.header = header;
+        this.footer = footer;
+        this.pages = pages;
+        this.text = text;
+        this.display = function () {
+          console.log(this.header, this.footer, this.pages, this.text);
+        };
+      }
+
+      function DocumentProtoType(proto) {
+        this.proto = proto;
+        this.clone = function () {
+          var document = new Document();
+          document.header = proto.header;
+          document.footer = proto.footer;
+          document.pages = proto.pages;
+          document.text = proto.text;
+          return document;
+        };
+      }
+
+      let d1 = new Document(
+        "Company Header",
+        "Company Footer",
+        5,
+        "Original content"
+      );
+      console.log(d1);
+      d1.display();
+
+      let d2 = new DocumentProtoType(d1);
+      let clonedDoc = d2.clone();
+      console.log("d2", d2.proto);
+
+      clonedDoc.header = "New Header";
+      clonedDoc.text = "Modified content";
+      console.log(clonedDoc);
+      clonedDoc.display();
+    </script>
+  </body>
+</html>

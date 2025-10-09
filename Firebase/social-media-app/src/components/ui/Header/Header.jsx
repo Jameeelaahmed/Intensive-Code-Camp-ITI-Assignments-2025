@@ -1,9 +1,24 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../hooks/useAuth';
 
 const Header = () => {
     const navigate = useNavigate();
+    const { currentUser, logout } = useAuth();
+
+    const handleLogout = async () => {
+        try {
+            await logout();
+            navigate('/auth/login');
+        } catch (error) {
+            console.error('Failed to log out:', error);
+        }
+    };
+
+    const handleLogin = () => {
+        navigate('/auth/login');
+    };
 
     return (
         <header className={styles.header}>
@@ -11,19 +26,27 @@ const Header = () => {
                 Socialize
             </div>
 
-            <nav className={styles.nav}>
-                <Link to="/" className={styles.navItem}>Home</Link>
-                <Link to="/profile" className={styles.navItem}>Profile</Link>
-                <Link to="/friends" className={styles.navItem}>Friends</Link>
-            </nav>
-
-            <div className={styles.searchBar}>
-                <input type="text" placeholder="Search..." />
-            </div>
-
-            <div className={styles.userActions}>
-                <button className={styles.notificationBtn}>🔔</button>
-                <div className={styles.userAvatar}>U</div>
+            <div className={styles.authSection}>
+                {currentUser ? (
+                    <div className={styles.userSection}>
+                        <span className={styles.welcomeText}>
+                            Welcome, {currentUser.displayName || currentUser.email}
+                        </span>
+                        <button
+                            className={styles.logoutButton}
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+                    </div>
+                ) : (
+                    <button
+                        className={styles.loginButton}
+                        onClick={handleLogin}
+                    >
+                        Login
+                    </button>
+                )}
             </div>
         </header>
     );

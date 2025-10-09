@@ -1,4 +1,4 @@
-import { View, Text, SectionList, StyleSheet, Image, TextInput, Animated } from 'react-native';
+import { View, Text, Pressable, SectionList, StyleSheet, Image, TextInput, Animated } from 'react-native';
 import { BlurView } from 'expo-blur';
 import React, { useState, useEffect, useRef } from 'react';
 import { Ionicons } from '@expo/vector-icons';
@@ -27,7 +27,7 @@ const CONTACTS = [
     { name: 'Jad', number: '777-999-0000', gender: 'M' },
 ]
 
-const SectionListCom = () => {
+const SectionListCom = ({ navigation }) => {
     const [search, setSearch] = useState('');
     const fadeAnim = useRef(new Animated.Value(0)).current;
 
@@ -57,6 +57,10 @@ const SectionListCom = () => {
             title: letter,
             data: grouped[letter],
         }))
+
+    const handleContactPress = (contact) => {
+        navigation.navigate('ContactDetails', { contact });
+    };
     return (
         <BlurView intensity={100} tint="dark" style={styles.absoluteFill}>
             <View style={styles.searchContainer}>
@@ -71,6 +75,7 @@ const SectionListCom = () => {
                 />
             </View>
 
+
             <SectionList
                 showsVerticalScrollIndicator={false}
                 sections={SECTIONS}
@@ -81,20 +86,22 @@ const SectionListCom = () => {
                     </View>
                 )}
                 renderItem={({ item }) => (
-                    <View style={styles.item}>
-                        <View style={styles.row}>
-                            {item.gender === 'F' ? (
-                                <Image source={require('../../assets/F.jpg')} style={styles.image} />
-                            ) : (
-                                <Image source={require('../../assets/M.jpg')} style={styles.image} />
-                            )}
-                            <View>
-                                <Text style={styles.name}>{item.name}</Text>
-                                <Text style={styles.number}>{item.number}</Text>
+                    <Pressable onPress={() => handleContactPress(item)}>
+                        <View style={styles.item}>
+                            <View style={styles.row}>
+                                {item.gender === 'F' ? (
+                                    <Image source={require('../../assets/F.jpg')} style={styles.image} />
+                                ) : (
+                                    <Image source={require('../../assets/M.jpg')} style={styles.image} />
+                                )}
+                                <View>
+                                    <Text style={styles.name}>{item.name}</Text>
+                                    <Text style={styles.number}>{item.number}</Text>
+                                </View>
                             </View>
+                            <Ionicons name="call" size={24} color="#5E9DFF" />
                         </View>
-                        <Ionicons name="call" size={24} color="#5E9DFF" />
-                    </View>
+                    </Pressable>
                 )}
                 ItemSeparatorComponent={() => <View style={styles.separator} />}
                 contentContainerStyle={styles.listContent}

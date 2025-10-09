@@ -1,13 +1,12 @@
-import React from 'react';
 import styles from './MainLayout.module.css';
 import Header from '../../components/ui/Header/Header';
-
-const MainLayout = ({ children }) => {
+import { Outlet } from 'react-router-dom';
+const MainLayout = () => {
     return (
         <div className={styles.mainLayout}>
             <Header />
             <main className={styles.content}>
-                {children}
+                <Outlet />
             </main>
             <footer className={styles.footer}>
                 © {new Date().getFullYear()} Socialize. All rights reserved.

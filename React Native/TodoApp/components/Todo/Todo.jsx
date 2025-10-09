@@ -30,7 +30,7 @@ const Todo = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>My Cute Todo List ✨</Text>
+            <Text style={styles.header}>Todo List ✨</Text>
 
             <Pressable
                 style={styles.addButton}
@@ -129,7 +129,7 @@ const Todo = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 25,
+        padding: 40,
         backgroundColor: '#fff9fb',
     },
     header: {

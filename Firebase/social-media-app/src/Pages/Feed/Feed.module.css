@@ -1,15 +1,17 @@
+/* Feed.module.css */
 .feedContainer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: #f0f2f5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 5%;
+  padding: 15px 30px;
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -17,49 +19,218 @@
   z-index: 100;
 }
 
-.header h1 {
-  color: #1877f2;
-  font-size: 1.8rem;
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6e8efb, #a777e3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin: 0;
 }
 
-.searchBar input {
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  width: 300px;
+.searchBar {
+  position: relative;
+  width: 40%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 20px 12px 45px;
+  border-radius: 25px;
+  border: 1px solid #e1e5eb;
   background-color: #f0f2f5;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.searchInput:focus {
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.2);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .mainContent {
   display: flex;
   flex: 1;
-  padding: 20px 5%;
-  gap: 25px;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .sidebar {
-  flex: 0 0 250px;
+  width: 250px;
   background: white;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+
+.sidebarItem {
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebarItem:hover {
+  background-color: #f0f2f5;
+  color: #6e8efb;
 }
 
 .feed {
   flex: 1;
-  max-width: 680px;
+  min-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .rightPanel {
-  flex: 0 0 300px;
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 80px;
   height: fit-content;
+}
+
+.panelCard {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.panelCard h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.activityItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.suggestionItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.suggestionItem:last-child {
+  border-bottom: none;
+}
+
+.suggestionAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.addButton {
+  background: #f0f2f5;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addButton:hover {
+  background: #e4e6e9;
+}
+
+/* Loading and empty states */
+.loadingContainer,
+.emptyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.loadingContainer p,
+.emptyContainer p {
+  color: #65676b;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.emptyContainer p {
+  text-align: center;
+  color: #8a8d91;
 }

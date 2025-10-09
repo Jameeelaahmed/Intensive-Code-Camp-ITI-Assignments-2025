@@ -1,33 +1,60 @@
+/* CreateEditPost.module.css */
 .createPostCard {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   padding: 20px;
   margin-bottom: 20px;
 }
 
-.createPostCard h3 {
-  margin-top: 0;
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 15px;
-  font-size: 1.2rem;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.header h3 {
+  margin: 0;
   color: #333;
 }
 
-.createPostCard textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  font-size: 1rem;
-  resize: vertical;
-  min-height: 80px;
-  margin-bottom: 15px;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.createPostCard textarea:focus {
-  border-color: #2575fc;
+.textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e1e5eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.3s;
+  background-color: #f8f9fa;
+}
+
+.textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 117, 252, 0.2);
+  border-color: #a777e3;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(167, 119, 227, 0.2);
 }
 
 .actions {

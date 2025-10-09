@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Builder</title>
+  </head>
+  <body>
+    <script>
+      function BuildingPizzaOb() {
+        this.construct = function (builder) {
+          builder.step1();
+          builder.step2();
+          return builder.get();
+        };
+      }
+
+      function PizzaBuilder() {
+        let pizza = null;
+
+        this.step1 = function () {
+          this.pizza = new Pizza();
+          console.log(this.pizza);
+        };
+
+        this.step2 = function () {
+          this.pizza.addParts();
+          console.log(this.pizza);
+        };
+
+        this.get = function () {
+          return this.pizza;
+        };
+      }
+
+      function Pizza() {
+        this.size = "";
+        this.crust = "";
+        this.sauce = "";
+        this.toppings = [];
+
+        this.addParts = function () {
+          this.size = "Large";
+          this.crust = "Thin";
+          this.sauce = "Tomato";
+          this.toppings = ["Pepperoni", "Mushrooms"];
+        };
+
+        this.display = function () {
+          console.log("Size:", this.size);
+          console.log("Crust:", this.crust);
+          console.log("Sauce:", this.sauce);
+          console.log("Toppings:", this.toppings);
+        };
+      }
+
+      let obj = new BuildingPizzaOb();
+      let builder = new PizzaBuilder();
+
+      let p = obj.construct(builder);
+
+      console.log(p);
+      p.display();
+    </script>
+  </body>
+</html>

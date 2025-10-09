@@ -1,18 +1,15 @@
+/* Post.module.css */
 .postCard {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   padding: 20px;
-  transition: box-shadow 0.3s;
-}
-
-.postCard:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .postHeader {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-bottom: 15px;
 }
 
@@ -20,64 +17,190 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  margin-right: 12px;
-  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .userName {
   font-weight: 600;
-  font-size: 1rem;
+  color: #333;
 }
 
 .postTime {
-  font-size: 0.8rem;
-  color: #777;
+  font-size: 0.85rem;
+  color: #6c757d;
 }
 
 .postContent {
-  font-size: 1.05rem;
-  line-height: 1.5;
   margin-bottom: 15px;
+  line-height: 1.5;
+  color: #333;
 }
 
 .postStats {
   display: flex;
-  justify-content: space-between;
-  color: #666;
-  font-size: 0.9rem;
+  gap: 15px;
   padding: 10px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  margin-bottom: 10px;
+  color: #6c757d;
+  font-size: 0.9rem;
 }
 
 .postActions {
   display: flex;
-  gap: 10px;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 
 .commentsSection {
   margin-top: 15px;
-  border-top: 1px solid #f0f0f0;
-  padding-top: 15px;
 }
 
-.commentForm {
+.comment {
   display: flex;
   gap: 10px;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.commentForm input {
+.commentAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.commentContent {
+  background: #f0f2f5;
+  border-radius: 18px;
+  padding: 10px 15px;
+  flex: 1;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.commentUser {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.commentTime {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.commentText {
+  font-size: 0.95rem;
+}
+
+.addComment {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.commentInput {
   flex: 1;
   padding: 12px 15px;
   border-radius: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #e1e5eb;
+  background: #f0f2f5;
   font-size: 0.95rem;
+}
+
+.commentInput:focus {
+  outline: none;
+  background: white;
+  border-color: #a777e3;
+}
+
+/* Comments section styles */
+.commentsList {
+  margin-top: 16px;
+}
+
+.loadingText {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 16px;
+}
+
+.noComments {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* Edit Post Styles */
+.editPost {
+  margin-bottom: 15px;
+}
+
+.editTextarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  background: #fafafa;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.editTextarea:focus {
+  outline: none;
+  border-color: #007bff;
+  background: white;
+}
+
+.editActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.editActions button {
+  min-width: 80px;
+}
+
+/* Mobile responsiveness updates */
+@media (max-width: 768px) {
+  .postCard {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .userAvatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .commentsList {
+    margin-top: 12px;
+  }
 }

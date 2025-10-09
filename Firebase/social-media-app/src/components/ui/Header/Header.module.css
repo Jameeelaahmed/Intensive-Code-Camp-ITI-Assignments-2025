@@ -17,56 +17,52 @@
   cursor: pointer;
 }
 
-.nav {
+/* Authentication Section */
+.authSection {
   display: flex;
-  gap: 25px;
+  align-items: center;
 }
 
-.navItem {
-  text-decoration: none;
-  color: #555;
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.welcomeText {
+  font-size: 0.9rem;
+  color: #65676b;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
-.navItem:hover {
-  color: #1877f2;
-}
-
-.searchBar {
-  flex: 0 1 400px;
-}
-
-.searchBar input {
-  width: 100%;
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  background-color: #f0f2f5;
-}
-
-.userActions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.notificationBtn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #555;
-}
-
-.userAvatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
+.logoutButton {
+  background-color: #42b883;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.logoutButton:hover {
+  background-color: #369870;
+}
+
+.loginButton {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: #166fe5;
 }

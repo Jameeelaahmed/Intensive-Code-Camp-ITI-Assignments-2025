@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let counter = 0;
+      class Singlton {
+        constructor(data) {
+          if (Singlton.instance) {
+            console.log("instance exist");
+          }
+          counter++;
+          console.log(counter);
+          this.data = data;
+        }
+      }
+
+      let instance1 = new Singlton("data_1");
+      let instance2 = new Singlton("data_2");
+      let instance3 = new Singlton("data_2");
+      let instance4 = new Singlton("data_2");
+    </script>
+  </body>
+</html>
